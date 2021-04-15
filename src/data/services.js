@@ -8,20 +8,23 @@ export const services = [
         name: 'Optimization',
         text:
             'You won’t believe it’s the same old computer. Your system will work like it did on the day you bought it!',
+        price: 200,
         image: service_1,
     },
     {
         id: 2,
-        name: 'Diagnosis & Repair',
+        name: 'Virus Removal',
         text:
-            'The one stop comprehensive diagnostic & repair station for your computer and connected devices',
+            'Online threats, viruses, hackers! Isn’t your head spinning already?',
+        price: 250,
         image: service_2,
     },
     {
         id: 3,
-        name: 'Virus Removal',
+        name: 'Diagnosis & Repair',
         text:
-            'Online threats, viruses, hackers! Isn’t your head spinning already?',
+            'The one stop comprehensive diagnostic & repair station for your computer and connected devices',
+        price: 300,
         image: service_3,
     },
 ];

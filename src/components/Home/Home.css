@@ -1,14 +1,42 @@
-/* Header Component */
-.header {
-    background-image: url('../../image/header-bg.jpg');
-}
-
+/* Home Common Styles ==> */
+/* Header & All-Support Component*/
 .header,
 .all-support {
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
     min-height: 400px;
+}
+
+/* Services & Testimonials Component*/
+.services .title h3,
+.testimonials .title h3 {
+    text-align: center;
+}
+
+.services .title h3::before,
+.testimonials .title h3::before {
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Service & Testimonial Component*/
+.service,
+.testimonial {
+    box-shadow: var(--shadow-light);
+    transition: var(--transition);
+    border-radius: var(--radius);
+}
+
+.service:hover,
+.testimonial:hover {
+    box-shadow: var(--shadow-dark);
+}
+/* <== Home Common Styles */
+
+/* Header Component */
+.header {
+    background-image: url('../../image/header-bg.jpg');
 }
 
 .header-info {
@@ -24,25 +52,9 @@
     color: var(--main-color);
 }
 
-/* Services Component */
-.services .title h3 {
-    text-align: center;
-}
-
-.services .title h3::before {
-    left: 50%;
-    transform: translateX(-50%);
-}
-
 /* Service Component*/
 .service {
-    box-shadow: var(--shadow-light);
-    transition: var(--transition);
-    border-radius: var(--radius);
-}
-
-.service:hover {
-    box-shadow: var(--shadow-dark);
+    background-color: var(--white-color);
 }
 
 .service img {
@@ -98,4 +110,32 @@
 
 .all-support-info p {
     color: var(--main-color);
+}
+
+/* Testimonial Component */
+.testimonial {
+    padding: 10px 20px;
+    background-color: var(--white-color);
+    cursor: grabbing;
+}
+
+.testimonial .author {
+    display: grid;
+    grid-template-columns: 70px auto;
+    column-gap: 10px;
+}
+
+.testimonial .author img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    align-self: center;
+}
+
+.testimonial .author .author-title {
+    align-self: center;
+}
+
+.testimonial .author .author-title p {
+    margin-bottom: 0;
 }

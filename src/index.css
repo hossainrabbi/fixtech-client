@@ -6,6 +6,7 @@
     --white-color: #ffffff;
     --heading-color: #1d3a59;
     --body-color: #727e8e;
+    --bg-color: #f6f6f6;
     --overlay-color: #000000b2;
     --shadow-light: 0px 0px 15px #00000014;
     --shadow-dark: 0px 0px 15px #00000049;
@@ -30,6 +31,7 @@ body {
     -moz-osx-font-smoothing: grayscale;
     font-size: 16px;
     color: var(--body-color);
+    background-color: var(--bg-color);
 }
 
 h1,
@@ -51,7 +53,7 @@ h3 {
     font-size: 2.5rem;
 }
 h6 {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
 }
 
 img {

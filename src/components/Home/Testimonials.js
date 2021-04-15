@@ -2,14 +2,17 @@ import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Container } from 'react-bootstrap';
 import { reviews } from '../../data/reviews';
-import 'swiper/swiper.scss';
 import Testimonial from './Testimonial';
+import 'swiper/swiper.scss';
 
 const Testimonials = () => {
     return (
-        <section className="testimonials mt-5 my-5">
+        <section className="testimonials my-5">
             <Container>
-                <Swiper spaceBetween={50} slidesPerView={3}>
+                <div className="title mb-5">
+                    <h3>Testimonials</h3>
+                </div>
+                <Swiper spaceBetween={50} slidesPerView={2}>
                     {reviews.map((review) => (
                         <SwiperSlide key={review.id}>
                             <Testimonial {...review} />

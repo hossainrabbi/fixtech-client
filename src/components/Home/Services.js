@@ -5,7 +5,7 @@ import Service from './Service';
 
 const Services = () => {
     return (
-        <section className="services mt-5 pt-5">
+        <section className="services pt-5">
             <Container>
                 <div className="title mb-5">
                     <h3>Our Services</h3>
