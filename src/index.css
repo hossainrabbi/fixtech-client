@@ -65,7 +65,7 @@ img {
     color: var(--white-color) !important;
     background-color: var(--main-color);
     text-transform: uppercase;
-    padding: 10px 20px;
+    padding: 8px 20px;
     border-radius: 30px;
     transition: all var(--transition);
 }
@@ -78,7 +78,7 @@ img {
 .read-more-btn {
     padding: 0;
     outline: none;
-    box-shadow: 0;
+    box-shadow: none !important;
     font-size: 0.9rem;
     text-transform: capitalize;
     color: var(--main-color) !important;
