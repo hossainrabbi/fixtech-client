@@ -1,13 +1,14 @@
 import React from 'react';
 import { Container, Nav, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import './NavManu.css';
 
 const NavManu = () => {
     return (
-        <Navbar bg="light" expand="lg">
+        <Navbar expand="lg" className="nav-manu fixed-top">
             <Container>
                 <Link to="/" className="navbar-brand">
-                    Computer Services
+                    FixTech
                 </Link>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
