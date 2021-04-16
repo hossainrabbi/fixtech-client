@@ -116,7 +116,6 @@
 .testimonial {
     padding: 10px 20px;
     background-color: var(--white-color);
-    cursor: grabbing;
 }
 
 .testimonial .author {

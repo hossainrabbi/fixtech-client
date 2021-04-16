@@ -7,8 +7,8 @@ import SidebarContent from './SidebarContent';
 
 const Dashboard = () => {
     return (
-        <Container className="dashboard">
-            <Router>
+        <Router>
+            <Container className="dashboard">
                 <Row>
                     <Col md={3}>
                         <Sidebar />
@@ -17,8 +17,8 @@ const Dashboard = () => {
                         <SidebarContent />
                     </Col>
                 </Row>
-            </Router>
-        </Container>
+            </Container>
+        </Router>
     );
 };
 
