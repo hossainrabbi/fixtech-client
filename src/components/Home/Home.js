@@ -4,6 +4,7 @@ import About from './About';
 import Services from './Services';
 import AllSupport from './AllSupport';
 import Testimonials from './Testimonials';
+import Footer from '../Footer/Footer';
 import './Home.css';
 
 const Home = () => {
@@ -14,6 +15,7 @@ const Home = () => {
             <About />
             <AllSupport />
             <Testimonials />
+            <Footer />
         </div>
     );
 };

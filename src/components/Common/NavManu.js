@@ -16,6 +16,9 @@ const NavManu = () => {
                         <Link to="/" className="nav-link">
                             Home
                         </Link>
+                        <Link to="/dashboard" className="nav-link">
+                            Dashboard
+                        </Link>
                         <Link to="/login" className="nav-link">
                             Login
                         </Link>

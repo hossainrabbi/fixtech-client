@@ -1,0 +1,18 @@
+/* Sidebar Component */
+.sidebar {
+    background-color: var(--heading-color);
+    height: 100vh;
+    position: fixed;
+    width: 25%;
+}
+
+.sidebar .nav-link {
+    color: var(--white-color) !important;
+    background-color: var(--main-color);
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.sidebar-selected {
+    background-color: var(--secondary-color) !important;
+}

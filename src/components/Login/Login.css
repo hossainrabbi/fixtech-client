@@ -24,6 +24,7 @@
     font-weight: 500;
     border: none;
     border-radius: var(--radius);
+    margin: 0 auto;
 }
 
 .login-btn img {

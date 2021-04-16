@@ -2,7 +2,7 @@
 
 :root {
     --main-color: #04b3f8;
-    --secondary-color: #fec537;
+    --secondary-color: #eeb524;
     --white-color: #ffffff;
     --heading-color: #1d3a59;
     --body-color: #727e8e;
@@ -32,6 +32,7 @@ body {
     font-size: 16px;
     color: var(--body-color);
     background-color: var(--bg-color);
+    overflow-x: hidden;
 }
 
 h1,
@@ -97,4 +98,8 @@ img {
     width: 40px;
     height: 5px;
     background-color: var(--main-color);
+}
+
+.pt-9 {
+    padding-top: 90px;
 }
