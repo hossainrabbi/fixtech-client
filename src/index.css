@@ -103,6 +103,15 @@ input:focus,
     color: var(--main-color) !important;
 }
 
+.delete-btn {
+    border: none;
+    height: 25px;
+    width: 25px;
+    text-align: center;
+    line-height: 25px;
+    background-color: transparent;
+}
+
 /* Others */
 .title h3 {
     position: relative;
