@@ -30,13 +30,9 @@ const OrderList = () => {
                                     as="select"
                                     onChange={handleChange}
                                 >
-                                    <option className="panding-btn">
-                                        Panding
-                                    </option>
-                                    <option className="on-going-btn">
-                                        On Going
-                                    </option>
-                                    <option className="done-btn">Done</option>
+                                    <option>Panding</option>
+                                    <option>On Going</option>
+                                    <option>Done</option>
                                 </Form.Control>
                             </Form.Group>
                         </Form>

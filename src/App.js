@@ -18,9 +18,9 @@ function App() {
                 <Switch>
                     <Route exact path="/" component={Home} />
                     <Route exact path="/login" component={Login} />
-                    <Route exact path="/dashboard">
+                    <PrivateRoute exact path="/dashboard">
                         <Dashboard />
-                    </Route>
+                    </PrivateRoute>
                 </Switch>
             </Router>
         </UserContext.Provider>

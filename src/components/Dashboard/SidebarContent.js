@@ -12,25 +12,25 @@ const SidebarContent = () => {
     return (
         <div className="pt-9">
             <Switch>
-                <Route path="/dashboard/book">
+                <Route exact path="/dashboard/book">
                     <Book />
                 </Route>
-                <Route path="/dashboard/bookinglist">
+                <Route exact path="/dashboard/bookinglist">
                     <BookingList />
                 </Route>
-                <Route path="/dashboard/review">
+                <Route exact path="/dashboard/review">
                     <Review />
                 </Route>
-                <Route path="/dashboard/orderlist">
+                <Route exact path="/dashboard/orderlist">
                     <OrderList />
                 </Route>
-                <Route path="/dashboard/addservices">
+                <Route exact path="/dashboard/addservices">
                     <AddServices />
                 </Route>
-                <Route path="/dashboard/makeadmin">
+                <Route exact path="/dashboard/makeadmin">
                     <MakeAdmin />
                 </Route>
-                <Route path="/dashboard/manageservice">
+                <Route exact path="/dashboard/manageservice">
                     <ManageService />
                 </Route>
             </Switch>

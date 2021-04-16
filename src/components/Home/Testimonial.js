@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Testimonial = ({ name, title, desc, image }) => {
+const Testimonial = ({ name, title, description, image }) => {
     return (
         <article className="testimonial">
             <div className="author mb-3">
@@ -12,7 +12,7 @@ const Testimonial = ({ name, title, desc, image }) => {
                     </p>
                 </div>
             </div>
-            <p> {desc}</p>
+            <p> {description}</p>
         </article>
     );
 };

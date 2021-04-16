@@ -8,7 +8,7 @@ export const reviews = [
         id: 1,
         name: 'Ashiq Hossain',
         title: 'Java Programmer',
-        desc:
+        description:
             'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla amet est ipsa alias nostrum, obcaecati corrupti fugit.',
         image: review_1,
     },
@@ -16,7 +16,7 @@ export const reviews = [
         id: 2,
         name: 'Rohan Hossain',
         title: 'Director of Data Secure',
-        desc:
+        description:
             'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla amet est ipsa alias nostrum, obcaecati corrupti fugit.',
         image: review_2,
     },
@@ -24,7 +24,7 @@ export const reviews = [
         id: 3,
         name: 'Rakib Islam',
         title: 'Marketing Manager',
-        desc:
+        description:
             'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla amet est ipsa alias nostrum, obcaecati corrupti fugit.',
         image: review_3,
     },
@@ -32,7 +32,7 @@ export const reviews = [
         id: 4,
         name: 'Kawsar Hossain',
         title: 'PHP Developer',
-        desc:
+        description:
             'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla amet est ipsa alias nostrum, obcaecati corrupti fugit.',
         image: review_4,
     },

@@ -1,8 +1,16 @@
-import React from 'react';
+import axios from 'axios';
+import React, { useContext, useState } from 'react';
 import { Form } from 'react-bootstrap';
 import { useForm } from 'react-hook-form';
+import { UserContext } from '../../App';
+import AlertMessage from '../Common/AlertMessage';
 
 const Review = () => {
+    const [alertShow, setAlertShow] = useState(false);
+    const [alertErrShow, setAlertErrShow] = useState(false);
+    const [loggend, setLoggend] = useContext(UserContext);
+    const { displayName, email, photoURL } = loggend;
+
     const {
         register,
         handleSubmit,
@@ -10,16 +18,47 @@ const Review = () => {
     } = useForm();
 
     const onSubmit = (data) => {
-        console.log(data);
+        const { title, description } = data;
+
+        const userInfo = {
+            name: displayName,
+            image: photoURL,
+            email,
+            title,
+            description,
+        };
+
+        axios
+            .post('http://localhost:8000/addReviews', userInfo)
+            .then(() => {
+                setAlertShow(true);
+            })
+            .catch(() => setAlertErrShow(true));
     };
 
     return (
         <Form className="w-100" onSubmit={handleSubmit(onSubmit)}>
+            {alertShow && (
+                <AlertMessage
+                    variant="success"
+                    closeBtn={() => setAlertShow(false)}
+                    text="Services added successfully!"
+                />
+            )}
+            {alertErrShow && (
+                <AlertMessage
+                    variant="danger"
+                    closeBtn={() => setAlertShow(false)}
+                    text="Failed to add service!"
+                />
+            )}
             <Form.Group>
                 <Form.Control
                     type="text"
+                    defaultValue={displayName}
                     {...register('name', { required: true })}
                     placeholder="Your Name*"
+                    readOnly
                 />
                 {errors.name && (
                     <Form.Text className="text-danger">
@@ -54,7 +93,7 @@ const Review = () => {
             </Form.Group>
             <div>
                 <button className="btn custom-btn book-btn" type="submit">
-                    Pay
+                    Add Review
                 </button>
             </div>
         </Form>

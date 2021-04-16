@@ -1,9 +1,13 @@
+/* dashboard */
+.dashboard {
+    margin-left: -15px;
+}
+
 /* Sidebar Component */
 .sidebar {
     background-color: var(--heading-color);
     height: 100vh;
     position: fixed;
-    width: 25%;
 }
 
 .sidebar .nav-link {
@@ -58,14 +62,13 @@
 .order-list-form .form-control:focus {
     background-color: transparent;
     border-color: transparent;
-    box-shadow: 0;
+    box-shadow: none;
 }
 
 /* Add Services Component */
 .upload-image {
     color: var(--white-color);
     background-color: var(--main-color);
-    margin: 10px 0 20px 0;
     padding: 7px 14px;
     box-shadow: rgb(50 50 93 / 15%) 0px 1px 3px, rgb(0 0 0 / 2%) 0px 1px 0px;
     border: 0;
@@ -81,8 +84,18 @@
 
 /* Make Admin Component */
 .admin-btn {
-    margin: 10px 0 20px 0;
     padding: 0.375rem 0.75rem;
     border-top-right-radius: 0.25rem !important;
     border-bottom-right-radius: 0.25rem !important;
+}
+
+@media (max-width: 767px) {
+    .dashboard {
+        margin-left: auto;
+    }
+    .sidebar {
+        position: static;
+        height: 100%;
+        background-color: transparent;
+    }
 }

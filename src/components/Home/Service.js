@@ -1,22 +1,19 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-const Service = ({ name, text, price, image, statusBtn, btnName }) => {
-    const [seeMore, setSeeMore] = useState(false);
-
+const Service = ({
+    name,
+    description,
+    price,
+    imageURL,
+    statusBtn,
+    btnName,
+}) => {
     return (
         <article className="service mb-4">
-            <img src={image} alt={name} />
+            <img src={imageURL} alt={name} />
             <div className="service-info">
                 <h6>{name}</h6>
-                <p>
-                    {seeMore ? `${text}` : `${text.substring(0, 50)}...`}
-                    <button
-                        className="btn read-more-btn"
-                        onClick={() => setSeeMore(!seeMore)}
-                    >
-                        {seeMore ? 'Show Less' : 'Read more'}
-                    </button>
-                </p>
+                <p>{description}</p>
                 <div className="d-flex justify-content-between align-items-center">
                     <h6 className="mb-0">${price}</h6>
                     <button className={`btn custom-btn ${statusBtn}`}>

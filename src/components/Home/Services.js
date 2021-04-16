@@ -1,9 +1,17 @@
-import React from 'react';
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
-import { services } from '../../data/services';
 import Service from './Service';
 
 const Services = () => {
+    const [services, setServices] = useState([]);
+    useEffect(() => {
+        axios
+            .get('http://localhost:8000/services')
+            .then((res) => setServices(res.data))
+            .catch((err) => console.log(err));
+    }, []);
+
     return (
         <section className="services pt-5">
             <Container>
@@ -12,7 +20,7 @@ const Services = () => {
                 </div>
                 <Row>
                     {services.map((service) => (
-                        <Col md={4} key={service.id}>
+                        <Col md={4} key={service._id}>
                             <Service
                                 {...service}
                                 statusBtn=""
