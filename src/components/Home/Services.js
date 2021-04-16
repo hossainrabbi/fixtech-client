@@ -13,7 +13,11 @@ const Services = () => {
                 <Row>
                     {services.map((service) => (
                         <Col md={4} key={service.id}>
-                            <Service {...service} />
+                            <Service
+                                {...service}
+                                statusBtn=""
+                                btnName="get Service"
+                            />
                         </Col>
                     ))}
                 </Row>

@@ -1,7 +1,8 @@
 import React from 'react';
+import ProcessPayment from '../ProcessPayment/ProcessPayment';
 
 const Book = () => {
-    return <div>book</div>;
+    return <ProcessPayment />;
 };
 
 export default Book;

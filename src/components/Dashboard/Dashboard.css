@@ -16,3 +16,31 @@
 .sidebar-selected {
     background-color: var(--secondary-color) !important;
 }
+
+/* Booking List Component*/
+.panding-btn {
+    color: #ff0000 !important;
+    background-color: #ff1e0063;
+}
+.panding-btn:hover {
+    color: #ff0000 !important;
+    background-color: #ff1e007e;
+}
+
+.done-btn {
+    color: #20b303 !important;
+    background-color: #28e2035e;
+}
+.done-btn:hover {
+    color: #20b303 !important;
+    background-color: #28e20383;
+}
+
+.on-going-btn {
+    color: #a07302 !important;
+    background-color: #eeb52456;
+}
+.on-going-btn:hover {
+    color: #a07302 !important;
+    background-color: #eeb52469;
+}

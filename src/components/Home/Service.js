@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 
-const Service = ({ name, text, price, image }) => {
+const Service = ({ name, text, price, image, statusBtn, btnName }) => {
     const [seeMore, setSeeMore] = useState(false);
 
     return (
-        <article className="service">
+        <article className="service mb-4">
             <img src={image} alt={name} />
             <div className="service-info">
                 <h6>{name}</h6>
@@ -19,7 +19,9 @@ const Service = ({ name, text, price, image }) => {
                 </p>
                 <div className="d-flex justify-content-between align-items-center">
                     <h6 className="mb-0">${price}</h6>
-                    <button className="btn custom-btn">get Service</button>
+                    <button className={`btn custom-btn ${statusBtn}`}>
+                        {btnName}
+                    </button>
                 </div>
             </div>
         </article>

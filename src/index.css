@@ -61,13 +61,31 @@ img {
     object-fit: cover;
 }
 
+input,
+.StripeElement {
+    margin: 10px 0 20px 0;
+    padding: 10px 14px;
+    box-shadow: rgba(50, 50, 93, 0.14902) 0px 1px 3px,
+        rgba(0, 0, 0, 0.0196078) 0px 1px 0px;
+    border: 0;
+    outline: 0;
+    border-radius: var(--radius);
+}
+
+input:focus,
+.StripeElement--focus {
+    box-shadow: rgba(50, 50, 93, 0.109804) 0px 4px 6px,
+        rgba(0, 0, 0, 0.0784314) 0px 1px 3px;
+    transition: all var(--transition);
+}
+
 /* Custom Button */
 .custom-btn {
     color: var(--white-color) !important;
     background-color: var(--main-color);
     text-transform: uppercase;
     padding: 8px 20px;
-    border-radius: 30px;
+    border-radius: var(--radius);
     transition: all var(--transition);
 }
 
