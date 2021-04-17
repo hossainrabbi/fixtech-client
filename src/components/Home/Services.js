@@ -21,11 +21,7 @@ const Services = () => {
                 <Row>
                     {services.map((service) => (
                         <Col md={4} key={service._id}>
-                            <Service
-                                {...service}
-                                statusBtn=""
-                                btnName="get Service"
-                            />
+                            <Service {...service} />
                         </Col>
                     ))}
                 </Row>

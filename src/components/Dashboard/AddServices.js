@@ -2,9 +2,10 @@ import { faCloudUploadAlt } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import axios from 'axios';
 import React, { useState } from 'react';
-import { Col, Form, Row } from 'react-bootstrap';
+import { Col, Container, Form, Row } from 'react-bootstrap';
 import { useForm } from 'react-hook-form';
 import AlertMessage from '../Common/AlertMessage';
+import Sidebar from './Sidebar';
 
 const AddServices = () => {
     const [imageURL, setImageURL] = useState('');
@@ -31,9 +32,13 @@ const AddServices = () => {
             .post('http://localhost:8000/addServices', servicesData)
             .then(() => {
                 setAlertShow(true);
+                setAlertErrShow(false);
                 setImageURL('');
             })
-            .catch(() => setAlertErrShow(true));
+            .catch(() => {
+                setAlertErrShow(true);
+                setAlertShow(false);
+            });
     };
 
     const handleImageUpload = (event) => {
@@ -52,95 +57,118 @@ const AddServices = () => {
     };
 
     return (
-        <Form className="w-100" onSubmit={handleSubmit(onSubmit)}>
-            {alertShow && (
-                <AlertMessage
-                    variant="success"
-                    closeBtn={() => setAlertShow(false)}
-                    text="Services added successfully!"
-                />
-            )}
-            {alertErrShow && (
-                <AlertMessage
-                    variant="danger"
-                    closeBtn={() => setAlertShow(false)}
-                    text="Failed to add service!"
-                />
-            )}
+        <Container className="dashboard">
             <Row>
-                <Col md={12}>
-                    <Form.Group>
-                        <Form.Control
-                            type="text"
-                            {...register('name', { required: true })}
-                            placeholder="Service Name*"
-                        />
-                        {errors.name && (
-                            <Form.Text className="text-danger">
-                                Service Name is required!
-                            </Form.Text>
-                        )}
-                    </Form.Group>
+                <Col md={3}>
+                    <Sidebar />
                 </Col>
-                <Col md={6}>
-                    <Form.Group>
-                        <Form.Control
-                            type="number"
-                            {...register('price', { required: true })}
-                            placeholder="Price*"
-                        />
-                        {errors.price && (
-                            <Form.Text className="text-danger">
-                                Price is required!
-                            </Form.Text>
+                <Col md={9}>
+                    <Form
+                        className="w-100 pt-9"
+                        onSubmit={handleSubmit(onSubmit)}
+                    >
+                        {alertShow && (
+                            <AlertMessage
+                                variant="success"
+                                closeBtn={() => setAlertShow(false)}
+                                text="Services added successfully!"
+                            />
                         )}
-                    </Form.Group>
-                </Col>
-                <Col md={6}>
-                    <Form.Group>
-                        <Form.File
-                            id="upload-file"
-                            className="d-none"
-                            name="upload"
-                            onChange={handleImageUpload}
-                        />
-                        <label className="upload-image" htmlFor="upload-file">
-                            <FontAwesomeIcon icon={faCloudUploadAlt} />
-                            <span>Upload image</span>
-                        </label>
-                        {/* {!uploadImage && (
+                        {alertErrShow && (
+                            <AlertMessage
+                                variant="danger"
+                                closeBtn={() => setAlertErrShow(false)}
+                                text="Failed to add service!"
+                            />
+                        )}
+                        <Row>
+                            <Col md={12}>
+                                <Form.Group>
+                                    <Form.Control
+                                        type="text"
+                                        {...register('name', {
+                                            required: true,
+                                        })}
+                                        placeholder="Service Name*"
+                                    />
+                                    {errors.name && (
+                                        <Form.Text className="text-danger">
+                                            Service Name is required!
+                                        </Form.Text>
+                                    )}
+                                </Form.Group>
+                            </Col>
+                            <Col md={6}>
+                                <Form.Group>
+                                    <Form.Control
+                                        type="number"
+                                        {...register('price', {
+                                            required: true,
+                                        })}
+                                        placeholder="Price*"
+                                    />
+                                    {errors.price && (
+                                        <Form.Text className="text-danger">
+                                            Price is required!
+                                        </Form.Text>
+                                    )}
+                                </Form.Group>
+                            </Col>
+                            <Col md={6}>
+                                <Form.Group>
+                                    <Form.File
+                                        id="upload-file"
+                                        className="d-none"
+                                        name="upload"
+                                        onChange={handleImageUpload}
+                                    />
+                                    <label
+                                        className="upload-image"
+                                        htmlFor="upload-file"
+                                    >
+                                        <FontAwesomeIcon
+                                            icon={faCloudUploadAlt}
+                                        />
+                                        <span>Upload image</span>
+                                    </label>
+                                    {/* {!uploadImage && (
                             <Form.Text className="text-danger">
                                 Image is required!
                             </Form.Text>
                         )} */}
-                    </Form.Group>
-                </Col>
-                <Col md={12}>
-                    <Form.Group>
-                        <Form.Control
-                            as="textarea"
-                            rows={3}
-                            {...register('description', { required: true })}
-                            placeholder="Description*"
-                        />
-                        {errors.description && (
-                            <Form.Text className="text-danger">
-                                Description is required!
-                            </Form.Text>
-                        )}
-                    </Form.Group>
+                                </Form.Group>
+                            </Col>
+                            <Col md={12}>
+                                <Form.Group>
+                                    <Form.Control
+                                        as="textarea"
+                                        rows={3}
+                                        {...register('description', {
+                                            required: true,
+                                        })}
+                                        placeholder="Description*"
+                                    />
+                                    {errors.description && (
+                                        <Form.Text className="text-danger">
+                                            Description is required!
+                                        </Form.Text>
+                                    )}
+                                </Form.Group>
+                            </Col>
+                        </Row>
+                        <div>
+                            <button
+                                className="btn custom-btn book-btn"
+                                type="submit"
+                                disabled={!imageURL && true}
+                            >
+                                Submit
+                            </button>
+                        </div>
+                    </Form>
                 </Col>
             </Row>
-            <div>
-                <button
-                    className="btn custom-btn book-btn"
-                    type="submit"
-                    disabled={!imageURL && true}
-                >
-                    Submit
-                </button>
-            </div>
-        </Form>
+        </Container>
     );
 };
 

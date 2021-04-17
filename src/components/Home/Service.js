@@ -1,13 +1,13 @@
 import React from 'react';
+import { useHistory } from 'react-router';
 
-const Service = ({
-    name,
-    description,
-    price,
-    imageURL,
-    statusBtn,
-    btnName,
-}) => {
+const Service = ({ _id, name, description, price, imageURL, btnName }) => {
+    const history = useHistory();
+
+    const handleServiceClick = (id) => {
+        history.push(`/dashboard/book/${id}`);
+    };
+
     return (
         <article className="service mb-4">
             <img src={imageURL} alt={name} />
@@ -16,8 +16,11 @@ const Service = ({
                 <p>{description}</p>
                 <div className="d-flex justify-content-between align-items-center">
                     <h6 className="mb-0">${price}</h6>
-                    <button className={`btn custom-btn ${statusBtn}`}>
-                        {btnName}
+                    <button
+                        className="btn custom-btn"
+                        onClick={() => handleServiceClick(_id)}
+                    >
+                        get Service
                     </button>
                 </div>
             </div>

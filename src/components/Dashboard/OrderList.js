@@ -1,46 +1,45 @@
-import React, { useState } from 'react';
-import { Form, Table } from 'react-bootstrap';
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
+import { Col, Container, Row, Table } from 'react-bootstrap';
+import OrderItem from './OrderItem';
+import Sidebar from './Sidebar';
 
 const OrderList = () => {
-    const [selectedValue, setSelectedValue] = useState('');
+   const [bookings, setBookings] = useState([]);
 
-    const handleChange = (e) => {
-        setSelectedValue(e.target.value);
-    };
+   useEffect(() => {
+      axios
+         .get('http://localhost:8000/bookings')
+         .then((res) => setBookings(res.data))
+         .catch((err) => console.log(err));
+   }, []);
 
-    return (
-        <Table striped bordered hover size="sm">
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Email</th>
-                    <th>Service</th>
-                    <th>Status</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Mark</td>
-                    <td>Otto@gmail.com</td>
-                    <td>Various</td>
-                    <td>
-                        <Form className="order-list-form">
-                            <Form.Group className="mb-0">
-                                <Form.Control
-                                    as="select"
-                                    onChange={handleChange}
-                                >
-                                    <option>Panding</option>
-                                    <option>On Going</option>
-                                    <option>Done</option>
-                                </Form.Control>
-                            </Form.Group>
-                        </Form>
-                    </td>
-                </tr>
-            </tbody>
-        </Table>
-    );
+   return (
+      <Container className="dashboard">
+         <Row>
+            <Col md={3}>
+               <Sidebar />
+            </Col>
+            <Col className="pt-9" md={9}>
+               <Table striped bordered hover size="sm">
+                  <thead>
+                     <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Service</th>
+                        <th>Status</th>
+                     </tr>
+                  </thead>
+                  <tbody>
+                     {bookings.map((booking) => (
+                        <OrderItem {...booking} key={booking._id} />
+                     ))}
+                  </tbody>
+               </Table>
+            </Col>
+         </Row>
+      </Container>
+   );
 };
 
 export default OrderList;

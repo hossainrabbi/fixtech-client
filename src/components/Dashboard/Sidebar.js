@@ -2,7 +2,6 @@ import {
     faPlus,
     faSatelliteDish,
     faShoppingBag,
-    faShoppingCart,
     faSortAmountUp,
     faTasks,
     faUserPlus,
@@ -15,15 +14,6 @@ const Sidebar = () => {
     return (
         <ul className="sidebar pt-9">
             {/* For customer service */}
-            <li>
-                <NavLink
-                    className="nav-link"
-                    to="/dashboard/book"
-                    activeClassName="sidebar-selected"
-                >
-                    <FontAwesomeIcon icon={faShoppingCart} /> Book
-                </NavLink>
-            </li>
             <li>
                 <NavLink
                     className="nav-link"
