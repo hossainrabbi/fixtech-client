@@ -8,16 +8,16 @@ import Footer from '../Footer/Footer';
 import './Home.css';
 
 const Home = () => {
-    return (
-        <div>
-            <Header />
-            <Services />
-            <About />
-            <AllSupport />
-            <Testimonials />
-            <Footer />
-        </div>
-    );
+   return (
+      <div>
+         <Header />
+         <Services />
+         <About />
+         <AllSupport />
+         <Testimonials />
+         <Footer />
+      </div>
+   );
 };
 
 export default Home;

@@ -16,43 +16,43 @@ import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 export const UserContext = createContext();
 
 function App() {
-    const [loggend, setLoggend] = useState({});
+   const [loggend, setLoggend] = useState({});
 
-    return (
-        <UserContext.Provider value={[loggend, setLoggend]}>
-            <Router>
-                <NavManu />
-                <Switch>
-                    <Route exact path="/" component={Home} />
-                    <Route exact path="/login" component={Login} />
-                    <PrivateRoute exact path="/dashboard">
-                        <Dashboard />
-                    </PrivateRoute>
-                    <PrivateRoute exact path="/dashboard/book/:id">
-                        <Book />
-                    </PrivateRoute>
-                    <PrivateRoute exact path="/dashboard/bookinglist">
-                        <BookingList />
-                    </PrivateRoute>
-                    <PrivateRoute exact path="/dashboard/review">
-                        <Review />
-                    </PrivateRoute>
-                    <PrivateRoute exact path="/dashboard/orderlist">
-                        <OrderList />
-                    </PrivateRoute>
-                    <PrivateRoute exact path="/dashboard/addservices">
-                        <AddServices />
-                    </PrivateRoute>
-                    <PrivateRoute exact path="/dashboard/makeadmin">
-                        <MakeAdmin />
-                    </PrivateRoute>
-                    <PrivateRoute exact path="/dashboard/manageservice">
-                        <ManageService />
-                    </PrivateRoute>
-                </Switch>
-            </Router>
-        </UserContext.Provider>
-    );
+   return (
+      <UserContext.Provider value={[loggend, setLoggend]}>
+         <Router>
+            <NavManu />
+            <Switch>
+               <Route exact path="/" component={Home} />
+               <Route exact path="/login" component={Login} />
+               <PrivateRoute exact path="/dashboard">
+                  <Dashboard />
+               </PrivateRoute>
+               <PrivateRoute exact path="/dashboard/book/:id">
+                  <Book />
+               </PrivateRoute>
+               <PrivateRoute exact path="/dashboard/bookinglist">
+                  <BookingList />
+               </PrivateRoute>
+               <PrivateRoute exact path="/dashboard/review">
+                  <Review />
+               </PrivateRoute>
+               <PrivateRoute exact path="/dashboard/orderlist">
+                  <OrderList />
+               </PrivateRoute>
+               <PrivateRoute exact path="/dashboard/addservices">
+                  <AddServices />
+               </PrivateRoute>
+               <PrivateRoute exact path="/dashboard/makeadmin">
+                  <MakeAdmin />
+               </PrivateRoute>
+               <PrivateRoute exact path="/dashboard/manageservice">
+                  <ManageService />
+               </PrivateRoute>
+            </Switch>
+         </Router>
+      </UserContext.Provider>
+   );
 }
 
 export default App;

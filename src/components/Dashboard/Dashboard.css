@@ -1,101 +1,101 @@
 /* dashboard */
 .dashboard {
-    margin-left: -15px;
+   margin-left: -15px;
 }
 
 /* Sidebar Component */
 .sidebar {
-    background-color: var(--heading-color);
-    height: 100vh;
-    position: fixed;
+   background-color: var(--heading-color);
+   height: 100vh;
+   position: fixed;
 }
 
 .sidebar .nav-link {
-    color: var(--white-color) !important;
-    background-color: var(--main-color);
-    margin-bottom: 10px;
-    font-weight: 500;
+   color: var(--white-color) !important;
+   background-color: var(--main-color);
+   margin-bottom: 10px;
+   font-weight: 500;
 }
 
 .sidebar-selected {
-    background-color: var(--secondary-color) !important;
+   background-color: var(--secondary-color) !important;
 }
 
 /* Booking List Component*/
 .Panding {
-    color: #ff0000 !important;
-    background-color: #ff1e0063;
+   color: #ff0000 !important;
+   background-color: #ff1e0063;
 }
 .Panding:hover {
-    color: #ff0000 !important;
-    background-color: #ff1e007e;
+   color: #ff0000 !important;
+   background-color: #ff1e007e;
 }
 
 .Done {
-    color: #20b303 !important;
-    background-color: #28e2035e;
+   color: #20b303 !important;
+   background-color: #28e2035e;
 }
 .Done:hover {
-    color: #20b303 !important;
-    background-color: #28e20383;
+   color: #20b303 !important;
+   background-color: #28e20383;
 }
 
 .On.Going {
-    color: #a07302 !important;
-    background-color: #eeb52456;
+   color: #a07302 !important;
+   background-color: #eeb52456;
 }
 .On.Going:hover {
-    color: #a07302 !important;
-    background-color: #eeb52469;
+   color: #a07302 !important;
+   background-color: #eeb52469;
 }
 
 /* Order List Component */
 .order-list-form .form-control {
-    height: auto;
-    padding: 0;
-    background-color: transparent;
-    background-clip: padding-box;
-    border: none;
-    border-radius: var(--radius);
+   height: auto;
+   padding: 0;
+   background-color: transparent;
+   background-clip: padding-box;
+   border: none;
+   border-radius: var(--radius);
 }
 
 .order-list-form .form-control:focus {
-    background-color: transparent;
-    border-color: transparent;
-    box-shadow: none;
+   background-color: transparent;
+   border-color: transparent;
+   box-shadow: none;
 }
 
 /* Add Services Component */
 .upload-image {
-    color: var(--white-color);
-    background-color: var(--main-color);
-    padding: 7px 14px;
-    box-shadow: rgb(50 50 93 / 15%) 0px 1px 3px, rgb(0 0 0 / 2%) 0px 1px 0px;
-    border: 0;
-    outline: 0;
-    border-radius: var(--radius);
-    font-weight: 600;
-    cursor: alias;
+   color: var(--white-color);
+   background-color: var(--main-color);
+   padding: 7px 14px;
+   box-shadow: rgb(50 50 93 / 15%) 0px 1px 3px, rgb(0 0 0 / 2%) 0px 1px 0px;
+   border: 0;
+   outline: 0;
+   border-radius: var(--radius);
+   font-weight: 600;
+   cursor: alias;
 }
 
 .upload-image span {
-    margin-left: 15px;
+   margin-left: 15px;
 }
 
 /* Make Admin Component */
 .admin-btn {
-    padding: 0.375rem 0.75rem;
-    border-top-right-radius: 0.25rem !important;
-    border-bottom-right-radius: 0.25rem !important;
+   padding: 0.375rem 0.75rem;
+   border-top-right-radius: 0.25rem !important;
+   border-bottom-right-radius: 0.25rem !important;
 }
 
 @media (max-width: 767px) {
-    .dashboard {
-        margin-left: auto;
-    }
-    .sidebar {
-        position: static;
-        height: 100%;
-        background-color: transparent;
-    }
+   .dashboard {
+      margin-left: auto;
+   }
+   .sidebar {
+      position: static;
+      height: 100%;
+      background-color: transparent;
+   }
 }
