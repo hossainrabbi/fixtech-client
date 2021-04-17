@@ -42,11 +42,11 @@
 
 .On.Going {
    color: #a07302 !important;
-   background-color: #eeb52456;
+   background-color: #eeb52427;
 }
 .On.Going:hover {
    color: #a07302 !important;
-   background-color: #eeb52469;
+   background-color: #eeb52427;
 }
 
 /* Order List Component */

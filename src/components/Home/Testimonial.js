@@ -2,7 +2,7 @@ import React from 'react';
 
 const Testimonial = ({ name, title, description, image }) => {
    return (
-      <article className="testimonial">
+      <article className="testimonial mb-4">
          <div className="author mb-3">
             <img src={image} alt={name} />
             <div className="author-title">

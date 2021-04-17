@@ -1,12 +1,24 @@
+import axios from 'axios';
 import React, { useState } from 'react';
 import { Form } from 'react-bootstrap';
 
-const OrderItem = ({ userName, userEmail, servicesName, bookingStatus }) => {
-   const [selectedValue, setSelectedValue] = useState('');
+const OrderItem = ({
+   _id,
+   userName,
+   userEmail,
+   servicesName,
+   bookingStatus,
+}) => {
+   const [updateValue, setUpdateValue] = useState(bookingStatus);
 
    const handleChange = (e) => {
-      setSelectedValue(e.target.value);
+      setUpdateValue(e.target.value);
    };
+
+   axios
+      .patch(`http://localhost:8000/bookingUpdate/${_id}`, { updateValue })
+      .then((res) => console.log('Status Updated!'))
+      .catch((err) => console.log(err));
 
    return (
       <tr>
@@ -21,7 +33,7 @@ const OrderItem = ({ userName, userEmail, servicesName, bookingStatus }) => {
                      onChange={handleChange}
                      className={bookingStatus}
                   >
-                     <option disabled>{bookingStatus}</option>
+                     <option>{bookingStatus}</option>
                      <option>Panding</option>
                      <option>On Going</option>
                      <option>Done</option>

@@ -126,11 +126,11 @@ const AddServices = () => {
                               <FontAwesomeIcon icon={faCloudUploadAlt} />
                               <span>Upload image</span>
                            </label>
-                           {/* {!uploadImage && (
-                            <Form.Text className="text-danger">
-                                Image is required!
-                            </Form.Text>
-                        )} */}
+                           {!imageURL && (
+                              <Form.Text className="text-danger">
+                                 Image is required!
+                              </Form.Text>
+                           )}
                         </Form.Group>
                      </Col>
                      <Col md={12}>
