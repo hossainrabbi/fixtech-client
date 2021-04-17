@@ -7,7 +7,7 @@
    --heading-color: #1d3a59;
    --body-color: #727e8e;
    --bg-color: #f6f6f6;
-   --overlay-color: #0000009f;
+   --overlay-color: #000000b7;
    --shadow-light: 0px 0px 15px #00000014;
    --shadow-dark: 0px 0px 15px #00000049;
    --transition: 0.3s;
@@ -33,6 +33,7 @@ body {
    color: var(--body-color);
    background-color: var(--bg-color);
    overflow-x: hidden;
+   position: relative;
 }
 
 h1,
