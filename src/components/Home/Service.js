@@ -25,7 +25,9 @@ const Service = ({ _id, name, description, price, imageURL }) => {
 
    return (
       <article className="service mb-4">
-         <img src={imageURL} alt={name} />
+         <div className="service-image">
+            <img src={imageURL} alt={name} />
+         </div>
          <div className="service-info">
             <h6>{name}</h6>
             <p>{description}</p>
