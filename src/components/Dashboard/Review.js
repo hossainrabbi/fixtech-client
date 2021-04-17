@@ -30,7 +30,10 @@ const Review = () => {
       };
 
       axios
-         .post('http://localhost:8000/addReviews', userInfo)
+         .post(
+            'https://serene-fortress-07268.herokuapp.com/addReviews',
+            userInfo
+         )
          .then(() => {
             setAlertShow(true);
          })

@@ -11,7 +11,7 @@ const Services = () => {
    useEffect(() => {
       setLoading(true);
       axios
-         .get('http://localhost:8000/services')
+         .get('https://serene-fortress-07268.herokuapp.com/services')
          .then((res) => {
             setLoading(false);
             setServices(res.data);

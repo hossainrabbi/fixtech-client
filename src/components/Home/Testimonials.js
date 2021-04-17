@@ -11,7 +11,7 @@ const Testimonials = () => {
    useEffect(() => {
       setLoading(true);
       axios
-         .get('http://localhost:8000/reviews')
+         .get('https://serene-fortress-07268.herokuapp.com/reviews')
          .then((res) => {
             setLoading(false);
             serReviews(res.data);

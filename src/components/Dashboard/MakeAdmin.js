@@ -21,7 +21,10 @@ const MakeAdmin = () => {
       };
 
       axios
-         .post('http://localhost:8000/addAdmin', adminEmail)
+         .post(
+            'https://serene-fortress-07268.herokuapp.com/addAdmin',
+            adminEmail
+         )
          .then(() => {
             setAlertShow(true);
             setAlertErrShow(false);

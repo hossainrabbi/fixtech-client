@@ -14,7 +14,9 @@ const BookingList = () => {
    useEffect(() => {
       setLoading(true);
       axios
-         .get(`http://localhost:8000/bookings?email=${loggend.email}`)
+         .get(
+            `https://serene-fortress-07268.herokuapp.com/bookings?email=${loggend.email}`
+         )
          .then((res) => {
             setLoading(false);
             setBookings(res.data);

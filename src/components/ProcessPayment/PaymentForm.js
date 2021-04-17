@@ -20,7 +20,7 @@ const PaymentForm = ({ id }) => {
    useEffect(() => {
       setLoading(true);
       axios
-         .get('http://localhost:8000/services')
+         .get('https://serene-fortress-07268.herokuapp.com/services')
          .then((res) => {
             setLoading(false);
             setServices(res.data);
@@ -64,7 +64,10 @@ const PaymentForm = ({ id }) => {
          };
 
          axios
-            .post('http://localhost:8000/addBooking', serviceBooking)
+            .post(
+               'https://serene-fortress-07268.herokuapp.com/addBooking',
+               serviceBooking
+            )
             .then(() => {
                setAlertShow(true);
                setAlertErrShow(false);

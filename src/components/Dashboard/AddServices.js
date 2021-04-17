@@ -29,7 +29,10 @@ const AddServices = () => {
       };
 
       axios
-         .post('http://localhost:8000/addServices', servicesData)
+         .post(
+            'https://serene-fortress-07268.herokuapp.com/addServices',
+            servicesData
+         )
          .then(() => {
             setAlertShow(true);
             setAlertErrShow(false);

@@ -9,7 +9,9 @@ const ManageItem = ({ _id, name, price, setAlertShow, setAlertErrShow }) => {
    useEffect(() => {
       id &&
          axios
-            .delete(`http://localhost:8000/services/delete/${id}`)
+            .delete(
+               `https://serene-fortress-07268.herokuapp.com/services/delete/${id}`
+            )
             .then(() => {
                setAlertShow(true);
                setAlertErrShow(false);

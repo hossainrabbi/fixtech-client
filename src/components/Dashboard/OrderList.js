@@ -12,7 +12,7 @@ const OrderList = () => {
    useEffect(() => {
       setLoading(true);
       axios
-         .get('http://localhost:8000/allBookings')
+         .get('https://serene-fortress-07268.herokuapp.com/allBookings')
          .then((res) => {
             setLoading(false);
             setBookings(res.data);

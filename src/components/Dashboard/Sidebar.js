@@ -21,7 +21,9 @@ const Sidebar = () => {
    useEffect(() => {
       setLoading(true);
       axios
-         .get(`http://localhost:8000/admin?email=${loggend.email}`)
+         .get(
+            `https://serene-fortress-07268.herokuapp.com/admin?email=${loggend.email}`
+         )
          .then((res) => {
             setLoading(false);
             setIsAdmin(res.data);
