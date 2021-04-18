@@ -171,6 +171,9 @@ button[disabled] {
 }
 
 @media (max-width: 576px) {
+   body {
+      letter-spacing: 0;
+   }
    h1 {
       font-size: 1.6rem;
    }
