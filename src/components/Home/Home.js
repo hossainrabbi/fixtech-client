@@ -6,6 +6,7 @@ import AllSupport from './AllSupport';
 import Testimonials from './Testimonials';
 import Footer from '../Footer/Footer';
 import './Home.css';
+import Faq from './Faq';
 
 const Home = () => {
    return (
@@ -15,6 +16,7 @@ const Home = () => {
          <About />
          <AllSupport />
          <Testimonials />
+         <Faq />
          <Footer />
       </div>
    );

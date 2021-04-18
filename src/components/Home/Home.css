@@ -8,7 +8,7 @@
    min-height: 400px;
 }
 
-/* Services & Testimonials Component*/
+/* Services, Testimonials $Faq Component*/
 .services .title h3,
 .testimonials .title h3 {
    text-align: center;
@@ -147,6 +147,11 @@
 
 .testimonial .author .author-title p {
    margin-bottom: 0;
+}
+
+/* FAQ Components */
+.faq .accordion-header {
+   cursor: pointer;
 }
 
 /* Media */
