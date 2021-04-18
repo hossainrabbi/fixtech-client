@@ -9,11 +9,13 @@
 }
 
 /* Services, Testimonials $Faq Component*/
+.about .title h3,
 .services .title h3,
 .testimonials .title h3 {
    text-align: center;
 }
 
+.about .title h3::before,
 .services .title h3::before,
 .testimonials .title h3::before {
    left: 50%;
@@ -163,6 +165,10 @@
 
    .header-info {
       height: 350px;
+   }
+
+   .about img {
+      margin-bottom: 20px;
    }
 
    .all-support-info {
