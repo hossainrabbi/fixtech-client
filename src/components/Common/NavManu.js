@@ -6,7 +6,6 @@ import './NavManu.css';
 
 const NavManu = () => {
    const [loggend, setLoggend] = useContext(UserContext);
-   console.log(loggend);
 
    return (
       <Navbar expand="lg" className="nav-manu fixed-top">
