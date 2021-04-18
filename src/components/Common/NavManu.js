@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Container, Nav, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { UserContext } from '../../App';
 import './NavManu.css';
 
 const NavManu = () => {
+   const [loggend, setLoggend] = useContext(UserContext);
+   console.log(loggend);
+
    return (
       <Navbar expand="lg" className="nav-manu fixed-top">
          <Container>
@@ -19,9 +23,19 @@ const NavManu = () => {
                   <Link to="/dashboard" className="nav-link">
                      Dashboard
                   </Link>
-                  <Link to="/login" className="nav-link">
-                     Login
-                  </Link>
+                  {loggend.email ? (
+                     <button
+                        type="button"
+                        className="btn custom-btn py-lg-0 px-lg-2"
+                        onClick={() => setLoggend({})}
+                     >
+                        Log Out
+                     </button>
+                  ) : (
+                     <Link to="/login" className="nav-link">
+                        Login
+                     </Link>
+                  )}
                </Nav>
             </Navbar.Collapse>
          </Container>

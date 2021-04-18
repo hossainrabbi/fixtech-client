@@ -11,7 +11,7 @@ const Dashboard = () => {
                <Sidebar />
             </Col>
             <Col md={9}>
-               <h2 className="pt-9">Welcome to your Dashboard.</h2>
+               <h2 className="text-center pt-9">Welcome to your Dashboard.</h2>
             </Col>
          </Row>
       </Container>

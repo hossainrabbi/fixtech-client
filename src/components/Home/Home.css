@@ -5,7 +5,7 @@
    background-repeat: no-repeat;
    background-position: center center;
    background-size: cover;
-   min-height: 450px;
+   min-height: 400px;
 }
 
 /* Services & Testimonials Component*/
@@ -147,4 +147,25 @@
 
 .testimonial .author .author-title p {
    margin-bottom: 0;
+}
+
+/* Media */
+@media (max-width: 767px) {
+   .header,
+   .all-support {
+      min-height: 300px;
+   }
+
+   .header-info {
+      height: 350px;
+   }
+
+   .all-support-info {
+      height: 300px;
+   }
+
+   .header-content p,
+   .header-content h6 {
+      font-size: 0.9rem;
+   }
 }

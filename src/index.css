@@ -5,7 +5,7 @@
    --secondary-color: #eeb524;
    --white-color: #ffffff;
    --heading-color: #1d3a59;
-   --body-color: #727e8e;
+   --body-color: #646e7c;
    --bg-color: #f6f6f6;
    --overlay-color: #000000b7;
    --shadow-light: 0px 0px 15px #00000014;
@@ -34,6 +34,7 @@ body {
    background-color: var(--bg-color);
    overflow-x: hidden;
    position: relative;
+   letter-spacing: 0.2px;
 }
 
 h1,
@@ -54,6 +55,10 @@ h3 {
 }
 h6 {
    font-size: 1.2rem;
+}
+
+a {
+   text-decoration: none !important;
 }
 
 ul {
@@ -101,15 +106,6 @@ input:focus,
    background-color: var(--secondary-color);
 }
 
-.read-more-btn {
-   padding: 0;
-   outline: none;
-   box-shadow: none !important;
-   font-size: 0.9rem;
-   text-transform: capitalize;
-   color: var(--main-color) !important;
-}
-
 .delete-btn {
    border: none;
    height: 25px;
@@ -142,4 +138,40 @@ button[disabled] {
 
 .pt-9 {
    padding-top: 90px;
+}
+
+/* Media */
+@media (max-width: 992px) {
+   h1 {
+      font-size: 3rem;
+   }
+}
+
+@media (max-width: 767px) {
+   h1 {
+      font-size: 2rem;
+   }
+   h2 {
+      font-size: 2rem;
+   }
+
+   .custom-btn {
+      font-size: 0.9rem;
+      padding: 4px 10px;
+   }
+
+   .title h3 {
+      font-size: 1.5rem;
+   }
+   .title h3::before {
+      bottom: -5px;
+      width: 30px;
+      height: 4px;
+   }
+}
+
+@media (max-width: 576px) {
+   h1 {
+      font-size: 1.6rem;
+   }
 }

@@ -1,16 +1,18 @@
 import React from 'react';
-import { Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import './Footer.css';
+import FooterMain from './FooterMain';
 
 const Footer = () => {
    return (
       <footer>
-         <Container className="text-center">
-            <p>
+         <FooterMain />
+         <div className="text-center copy-right-footer">
+            <p className="container py-3 mb-0">
                Copyright &copy; <Link to="/">FixTech</Link>{' '}
                {new Date().getFullYear()}. All rights reserved.
             </p>
-         </Container>
+         </div>
       </footer>
    );
 };

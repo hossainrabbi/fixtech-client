@@ -1,27 +1,12 @@
-import axios from 'axios';
-import React, { useContext, useEffect, useState } from 'react';
+import React from 'react';
 import { useHistory } from 'react-router';
-import { UserContext } from '../../App';
 
 const Service = ({ _id, name, description, price, imageURL }) => {
    const history = useHistory();
-   const [isAdmin, setIsAdmin] = useState(false);
-   const [loggend, setLoggend] = useContext(UserContext);
 
    const handleServiceClick = (id) => {
       history.push(`/dashboard/book/${id}`);
    };
-
-   useEffect(() => {
-      axios
-         .get(
-            `https://serene-fortress-07268.herokuapp.com/admin?email=${loggend.email}`
-         )
-         .then((res) => {
-            setIsAdmin(res.data);
-         })
-         .catch((err) => console.log(err));
-   }, [loggend.email]);
 
    return (
       <article className="service mb-4">
@@ -36,7 +21,6 @@ const Service = ({ _id, name, description, price, imageURL }) => {
                <button
                   className="btn custom-btn"
                   onClick={() => handleServiceClick(_id)}
-                  disabled={isAdmin && true}
                >
                   get Service
                </button>

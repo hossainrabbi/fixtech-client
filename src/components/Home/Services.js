@@ -19,24 +19,25 @@ const Services = () => {
          .catch((err) => console.log(err));
    }, []);
 
+   if (loading) {
+      return <Loading />;
+   }
+
    return (
-      <>
-         {loading && <Loading />}
-         <section className="services pt-5">
-            <Container>
-               <div className="title mb-5">
-                  <h3>Our Services</h3>
-               </div>
-               <Row>
-                  {services.map((service) => (
-                     <Col md={4} key={service._id}>
-                        <Service {...service} />
-                     </Col>
-                  ))}
-               </Row>
-            </Container>
-         </section>
-      </>
+      <section className="services pt-5">
+         <Container>
+            <div className="title mb-5">
+               <h3>Our Services</h3>
+            </div>
+            <Row>
+               {services.map((service) => (
+                  <Col lg={4} md={6} key={service._id}>
+                     <Service {...service} />
+                  </Col>
+               ))}
+            </Row>
+         </Container>
+      </section>
    );
 };
 
