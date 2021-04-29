@@ -11,21 +11,29 @@ import axios from 'axios';
 import React, { useContext, useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { UserContext } from '../../App';
+import Loading from '../Common/Loading';
 
 const Sidebar = () => {
     const [loggend, setLoggend] = useContext(UserContext);
     const [isAdmin, setIsAdmin] = useState(false);
+    const [loading, setLoading] = useState(false);
 
     useEffect(() => {
+        setLoading(true);
         axios
             .get(
                 `https://serene-fortress-07268.herokuapp.com/admin?email=${loggend.email}`
             )
             .then((res) => {
+                setLoading(false);
                 setIsAdmin(res.data);
             })
             .catch((err) => console.log(err));
     }, [loggend.email]);
+
+    if (loading) {
+        return <div className="pt-9">Loading...</div>;
+    }
 
     return (
         <ul className="sidebar pt-9">
