@@ -1,6 +1,6 @@
 ## FixTech
 
-This is a computer services website build by React & NodeJS. If you want to get the service from now on, you must login with Google.
+A single-page Computer Services Application.
 
 #### If you are a Customar:
 
@@ -17,5 +17,13 @@ This is a computer services website build by React & NodeJS. If you want to get 
 -  You can change the booking status. The user can see it from his `Booking List`.
 -  You can add services from the `Add Service` and delete services from the `Manage Service`.
 -  You can add new admin from `Add Admin`.
+
+#### Technology Used : 
+- React.js.
+- React Bootstrap.
+- Firebase.
+- Node.js.
+- Express.js. 
+- MongoDB.
 
 ### FixTech Live Link: [FixTech](https://fixtech-hr.web.app)
