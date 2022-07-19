@@ -4,38 +4,33 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import axios from 'axios';
 
 const ManageItem = ({ _id, name, price, setAlertShow, setAlertErrShow }) => {
-   const [id, setId] = useState('');
+  const [id, setId] = useState('');
 
-   useEffect(() => {
-      id &&
-         axios
-            .delete(
-               `https://serene-fortress-07268.herokuapp.com/services/delete/${id}`
-            )
-            .then(() => {
-               setAlertShow(true);
-               setAlertErrShow(false);
-            })
-            .catch(() => {
-               setAlertErrShow(true);
-               setAlertShow(false);
-            });
-   }, [id, setAlertShow, setAlertErrShow]);
+  useEffect(() => {
+    id &&
+      axios
+        .delete(`http://localhost:8000/services/delete/${id}`)
+        .then(() => {
+          setAlertShow(true);
+          setAlertErrShow(false);
+        })
+        .catch(() => {
+          setAlertErrShow(true);
+          setAlertShow(false);
+        });
+  }, [id, setAlertShow, setAlertErrShow]);
 
-   return (
-      <tr>
-         <td>{name}</td>
-         <td>${price}</td>
-         <td>
-            <button
-               className="delete-btn text-danger"
-               onClick={() => setId(_id)}
-            >
-               <FontAwesomeIcon icon={faTrash} />
-            </button>
-         </td>
-      </tr>
-   );
+  return (
+    <tr>
+      <td>{name}</td>
+      <td>${price}</td>
+      <td>
+        <button className="delete-btn text-danger" onClick={() => setId(_id)}>
+          <FontAwesomeIcon icon={faTrash} />
+        </button>
+      </td>
+    </tr>
+  );
 };
 
 export default ManageItem;
