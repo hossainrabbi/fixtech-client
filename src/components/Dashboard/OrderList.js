@@ -9,7 +9,7 @@ const OrderList = () => {
 
   useEffect(() => {
     axios
-      .get('http://localhost:8000/allBookings')
+      .get('https://fixtech.herokuapp.com/allBookings')
       .then((res) => {
         setBookings(res.data);
       })

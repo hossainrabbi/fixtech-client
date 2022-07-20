@@ -1,5 +1,3 @@
-import { faCloudUploadAlt } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import axios from 'axios';
 import React, { useState } from 'react';
 import { Col, Container, Form, Row } from 'react-bootstrap';
@@ -9,6 +7,7 @@ import Sidebar from './Sidebar';
 
 const AddServices = () => {
   const [imageURL, setImageURL] = useState('');
+  const [loading, setLoading] = useState(false);
   const [alertShow, setAlertShow] = useState(false);
   const [alertErrShow, setAlertErrShow] = useState(false);
 
@@ -28,16 +27,19 @@ const AddServices = () => {
       imageURL,
     };
 
+    setLoading(true);
+
     axios
-      .post('http://localhost:8000/addServices', servicesData)
+      .post('https://fixtech.herokuapp.com/addServices', servicesData)
       .then(() => {
         setAlertShow(true);
         setAlertErrShow(false);
-        setImageURL('');
+        setLoading(false);
       })
       .catch(() => {
         setAlertErrShow(true);
         setAlertShow(false);
+        setLoading(false);
       });
   };
 
@@ -46,13 +48,17 @@ const AddServices = () => {
     imageData.set('key', 'f533ec1f83d853971cab7066d9ad335b');
     imageData.append('image', event.target.files[0]);
 
+    setLoading(true);
+
     axios
       .post('https://api.imgbb.com/1/upload', imageData)
       .then((res) => {
         setImageURL(res.data.data.display_url);
+        setLoading(false);
       })
       .catch((err) => {
         console.log(err);
+        setLoading(false);
       });
   };
 
@@ -115,19 +121,11 @@ const AddServices = () => {
                 <Form.Group>
                   <Form.File
                     id="upload-file"
-                    className="d-none"
+                    className="upload-image"
                     name="upload"
+                    required
                     onChange={handleImageUpload}
                   />
-                  <label className="upload-image" htmlFor="upload-file">
-                    <FontAwesomeIcon icon={faCloudUploadAlt} />
-                    <span>Upload image</span>
-                  </label>
-                  {!imageURL && (
-                    <Form.Text className="text-danger">
-                      Image is required!
-                    </Form.Text>
-                  )}
                 </Form.Group>
               </Col>
               <Col md={12}>
@@ -152,9 +150,9 @@ const AddServices = () => {
               <button
                 className="btn custom-btn book-btn"
                 type="submit"
-                disabled={!imageURL && true}
+                disabled={loading}
               >
-                Submit
+                {loading ? 'Loading...' : 'Submit'}
               </button>
             </div>
           </Form>

@@ -17,7 +17,7 @@ const PaymentForm = ({ id }) => {
 
   useEffect(() => {
     axios
-      .get('http://localhost:8000/services')
+      .get('https://fixtech.herokuapp.com/services')
       .then((res) => {
         setServices(res.data);
       })
@@ -60,7 +60,7 @@ const PaymentForm = ({ id }) => {
       };
 
       axios
-        .post('http://localhost:8000/addBooking', serviceBooking)
+        .post('https://fixtech.herokuapp.com/addBooking', serviceBooking)
         .then(() => {
           setAlertShow(true);
           setAlertErrShow(false);

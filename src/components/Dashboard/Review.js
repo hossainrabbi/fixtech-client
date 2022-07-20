@@ -30,7 +30,7 @@ const Review = () => {
     };
 
     axios
-      .post('http://localhost:8000/addReviews', userInfo)
+      .post('https://fixtech.herokuapp.com/addReviews', userInfo)
       .then(() => {
         setAlertShow(true);
       })
